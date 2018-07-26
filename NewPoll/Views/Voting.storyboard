@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JN2-7Y-MiQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Voting View Controller-->
+        <scene sceneID="3Po-2p-l5H">
+            <objects>
+                <viewController id="JN2-7Y-MiQ" customClass="VotingViewController" customModule="NewPoll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rho-nF-TKE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorite color?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-K5-Yfn">
+                                <rect key="frame" x="16" y="119" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Kr-ON-1yt">
+                                <rect key="frame" x="16" y="177" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="response" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-Fh-r0a">
+                                <rect key="frame" x="16" y="215" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSt-Ri-s81">
+                                <rect key="frame" x="163" y="305" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButton:" destination="JN2-7Y-MiQ" eventType="touchUpInside" id="0Qd-bA-O4T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h2G-Fh-r0a" firstAttribute="top" secondItem="5Kr-ON-1yt" secondAttribute="bottom" constant="8" symbolic="YES" id="BRx-Qx-y1v"/>
+                            <constraint firstItem="TSt-Ri-s81" firstAttribute="top" secondItem="h2G-Fh-r0a" secondAttribute="bottom" constant="60" id="MeF-ph-0EN"/>
+                            <constraint firstItem="5Kr-ON-1yt" firstAttribute="trailing" secondItem="h2G-Fh-r0a" secondAttribute="trailing" id="W75-Ek-kRV"/>
+                            <constraint firstItem="CLd-K5-Yfn" firstAttribute="leading" secondItem="rho-nF-TKE" secondAttribute="leadingMargin" id="Yky-1x-qNP"/>
+                            <constraint firstItem="CLd-K5-Yfn" firstAttribute="trailing" secondItem="5Kr-ON-1yt" secondAttribute="trailing" id="Yrg-gm-siQ"/>
+                            <constraint firstItem="5Kr-ON-1yt" firstAttribute="leading" secondItem="h2G-Fh-r0a" secondAttribute="leading" id="ZW7-mB-Wng"/>
+                            <constraint firstItem="CLd-K5-Yfn" firstAttribute="leading" secondItem="5Kr-ON-1yt" secondAttribute="leading" id="een-tl-vgg"/>
+                            <constraint firstItem="CLd-K5-Yfn" firstAttribute="trailing" secondItem="rho-nF-TKE" secondAttribute="trailingMargin" id="lj8-2a-vMA"/>
+                            <constraint firstItem="h2G-Fh-r0a" firstAttribute="centerX" secondItem="TSt-Ri-s81" secondAttribute="centerX" id="p14-DS-koV"/>
+                            <constraint firstItem="CLd-K5-Yfn" firstAttribute="top" secondItem="Ixe-Na-mFn" secondAttribute="top" constant="99" id="vYp-LS-NCg"/>
+                            <constraint firstItem="5Kr-ON-1yt" firstAttribute="top" secondItem="CLd-K5-Yfn" secondAttribute="bottom" constant="37" id="wuW-5A-b77"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ixe-Na-mFn"/>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteLabel" destination="CLd-K5-Yfn" id="eVg-pB-djj"/>
+                        <outlet property="name" destination="5Kr-ON-1yt" id="ban-Yj-MNw"/>
+                        <outlet property="response" destination="h2G-Fh-r0a" id="bxh-Fo-QbV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWQ-Qd-AFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16.800000000000001" y="142.57871064467767"/>
+        </scene>
+    </scenes>
+</document>
